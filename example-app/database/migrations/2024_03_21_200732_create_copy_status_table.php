@@ -16,7 +16,6 @@ return new class extends Migration
             $table->foreign('copies_id')->references('book_id')->on('copies');
             $table->string('status');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
