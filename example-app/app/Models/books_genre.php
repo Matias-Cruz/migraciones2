@@ -8,10 +8,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class books_genre extends Model
 {
-    // protected $table = "books_genres";
     use HasFactory;
     use SoftDeletes;
-
+    // protected $table = "books_genres";
+    
     protected $fillable = [
         'book_id',
         'genre_id',
