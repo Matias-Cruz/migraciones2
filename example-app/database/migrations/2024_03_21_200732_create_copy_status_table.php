@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('copy_status', function (Blueprint $table) {
             $table->id();
-            $table->foreign('copies_id')->references('book_id')->on('copies');
+            $table->foreignId('copies_id')->constrained('copies');
             $table->string('status');
             $table->timestamps();
             $table->softDeletes();

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('copies', function (Blueprint $table) {
             $table->id();
-            $table->foreign('book_id')->references('id')->on('books');
+            $table->foreignId('book_id')->constrained('books');
             $table->integer('quantity');
             $table->timestamps();
             $table->softDeletes();
