@@ -15,6 +15,6 @@ class RolesSeeder extends Seeder
     {
         $role = new role();
 
-        $role -> name = "Bibliotecario";
+        $role -> name = "Librarian";
     }
 }

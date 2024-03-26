@@ -10,7 +10,6 @@ class books_genre extends Model
 {
     use HasFactory;
     use SoftDeletes;
-    protected $table = "books_genres";
     
     protected $fillable = [
         'book_id',
