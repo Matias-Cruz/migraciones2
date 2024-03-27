@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class books_genre extends Model
+class BookGenre extends Model
 {
     use HasFactory;
     use SoftDeletes;
@@ -15,4 +15,13 @@ class books_genre extends Model
         'book_id',
         'genre_id',
     ];
+
+    
+    public function books (){
+        return $this->hasMany(book::class);
+    }
+
+    public function genres (){
+        return $this->hasMany(genre::class);
+    }
 }

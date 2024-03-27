@@ -11,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('copy_status', function (Blueprint $table) {
+        Schema::create('copy_statuses', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('copies_id')->constrained('copies');
-            $table->string('status');
+            $table->string('name')->unique();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('copy_status');
+        Schema::dropIfExists('copy_statuses');
     }
 };

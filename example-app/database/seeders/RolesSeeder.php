@@ -13,8 +13,15 @@ class RolesSeeder extends Seeder
      */
     public function run(): void
     {
-        $role = new role();
+        // $roles = [
+        // //     ['name' => 'Biografía'],
+        // //     ['name' => 'Historia']
+        // // ];
 
-        $role -> name = "Librarian";
+        // // foreach ($roles as $role) {
+        // //     role::create([
+        // //         'name' => $genre['name'],
+        // //     ]);
+        // }
     }
 }

@@ -6,14 +6,18 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class copy_status extends Model
+class Copy extends Model
 {
     use HasFactory;
     use SoftDeletes;
-    protected $table = "copy_status";
-    
+
     protected $fillable = [
-        'copies_id',
+        'book_id',
         'status',
+        'quantity',
     ];
+
+    public function copy_status (){
+        return $this->belongsTo(CopyStatus::class);
+    }
 }

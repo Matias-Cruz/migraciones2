@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class book extends Model
+class Book extends Model
 {
     use HasFactory;
     use SoftDeletes;
@@ -17,17 +17,11 @@ class book extends Model
     ];
 
     public function author (){
-        return $this->belongsTo(author::class);
+        return $this->belongsTo(Author::class);
     }
 
     public function genres (){
-        return $this->belongsToMany(genre::class);
+        return $this->belongsToMany(Genre::class);
     }
-
-    /**
-     * Poner los Modelos con Mayúsculas
-     * Especificar las relaciones en los modelos con belongsTo, belongsToMany y hasMany
-     * Leer documentación de nombres de laravel
-     * La relación de copies con copy_status está al revés
-     */
+    
 }
