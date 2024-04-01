@@ -14,4 +14,8 @@ class CopyStatus extends Model
     protected $fillable = [
         'status'
     ];
+
+    public function copies (){
+        return $this->belongsToMany(Copy::class);
+    }
 }

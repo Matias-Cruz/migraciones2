@@ -23,5 +23,9 @@ class Book extends Model
     public function genres (){
         return $this->belongsToMany(Genre::class);
     }
+
+    public function copies (){
+        return $this->hasMany(Copy::class);
+    }
     
 }

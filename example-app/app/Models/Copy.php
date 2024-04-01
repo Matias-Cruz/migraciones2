@@ -20,4 +20,8 @@ class Copy extends Model
     public function copy_status (){
         return $this->belongsTo(CopyStatus::class);
     }
+
+    public function book (){
+        return $this->belongsTo(Book::class);
+    }
 }
