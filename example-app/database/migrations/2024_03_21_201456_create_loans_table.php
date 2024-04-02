@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('loans', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('librarian_id')->constrained('users');
-            $table->foreignId('customer_id')->constrained('users');
+            $table->foreignId('librarian_id')->constrained('librarians');
+            $table->foreignId('customer_id')->constrained('customers');
             $table->foreignId('book_id')->constrained('copies');
             $table->integer('copies_quantity');
             $table->date('loan_date');
