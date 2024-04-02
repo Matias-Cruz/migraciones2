@@ -21,11 +21,11 @@ class Loan extends Model
     ];
     
     public function librarian_id (){
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Librarian::class);
     }
     
     public function customer_id (){
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Customer::class);
     }
 
     public function book_id (){
