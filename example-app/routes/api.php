@@ -1,8 +1,10 @@
 <?php
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
-
+// use Illuminate\Support\Facades\Route;
+use App\Core\Route;
+use App\Core\RouteCollection;
+use App\http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -13,7 +15,13 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+/** Default
+* Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+*     return $request->user();
+* });
+ */
+$routes = new RouteCollection();
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+$routes->addRoute(Route::post('/users', [UserController::class, 'store']));
+
+return $routes;
