@@ -13,4 +13,6 @@ class UserController extends Controller
         'username' => 'admin',
         ]);
     }
+
+    
 }
