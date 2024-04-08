@@ -7,10 +7,18 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    public function index() {
+        return User::all();
+    }
+
     public function store()
     {
         User::create([
         'username' => 'admin',
         ]);
+    }
+
+    public function show(){
+        return "Prueba de show()";
     }
 }

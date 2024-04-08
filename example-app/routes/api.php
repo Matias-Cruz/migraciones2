@@ -23,5 +23,6 @@ use App\http\Controllers\UserController;
 $routes = new RouteCollection();
 
 $routes->addRoute(Route::post('/users', [UserController::class, 'store']));
+$routes->addRoute(Route::post('/users', [UserController::class, 'show']));
 
 return $routes;
