@@ -13,7 +13,6 @@ class Copy extends Model
 
     protected $fillable = [
         'book_id',
-        'status',
         'quantity',
     ];
 

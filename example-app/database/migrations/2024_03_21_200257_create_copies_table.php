@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('copies', function (Blueprint $table) {
             $table->id();
             $table->foreignId('book_id')->constrained('books');
-            $table->foreignId('status')->constrained('copy_status');
+            // $table->foreignId('status')->constrained('copy_status');
             $table->integer('quantity');
             $table->timestamps();
             $table->softDeletes();
