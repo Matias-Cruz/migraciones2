@@ -11,14 +11,28 @@ class UserController extends Controller
         return User::all();
     }
 
-    public function store()
-    {
-        User::create([
-        'username' => 'admin',
-        ]);
+    public function show($id){
+        return User::find($id);
     }
 
-    public function show(){
-        return "Prueba de show()";
+    public function store(Request $request)
+    {
+        $user = new User();
+
+        $user-> username = $request-> username;
+
+        $user->save();
+        // return redirect()->route('users');
+    }
+
+    public function update(Request $request, $id){
+        $user = User::find($id);
+        $user-> username = $request-> username;
+        $user-> save();
+    }
+
+    public function delete($id){
+        $user = User::find($id);
+        $user -> delete();
     }
 }
