@@ -28,7 +28,8 @@ Route::get('users/{id}',[UserController::class,'show']);
 Route::post('users/store',[UserController::class,'store']);
 
 Route::put('users/{id}',[UserController::class,'update']);
-Route::delete('users/{id}',[UserController::class,'delete']);
+// Route::delete('users/{id}',[UserController::class,'delete']);
+Route::delete('users/{id}',[UserController::class,'destroy']);
 
 // AUTHORS
 Route::get('authors',[UserController::class,'index']);

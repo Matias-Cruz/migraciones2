@@ -17,7 +17,7 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
-        // updateOrCreate
+        // // updateOrCreate
         // return User::updateOrCreate(
         //     [
         //         'username'=> $request->username,
@@ -75,8 +75,14 @@ class UserController extends Controller
         $user-> save();
     }
 
-    public function delete($id){
-        $user = User::find($id);
-        $user -> delete();
+    public function destroy(User $id){
+        return User::destroy($id->id);
     }
+
+    // public function delete($id){
+    //     // Forma anterior (similar a find)
+    //     $user = User::find($id);
+    //     $user -> delete();
+    // }
+    
 }
