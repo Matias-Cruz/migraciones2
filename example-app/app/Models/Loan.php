@@ -20,15 +20,15 @@ class Loan extends Model
         'return_date'
     ];
     
-    public function librarian_id (){
-        return $this->belongsTo(User::class);
+    public function librarian (){
+        return $this->belongsTo(Librarian::class);
     }
     
-    public function customer_id (){
-        return $this->belongsTo(User::class);
+    public function customer (){
+        return $this->belongsTo(Customer::class);
     }
 
-    public function book_id (){
+    public function book (){
         return $this->belongsTo(Book::class);
     }
 }

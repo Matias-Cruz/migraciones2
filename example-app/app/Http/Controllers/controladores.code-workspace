@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../../.."
+		},
+		{
+			"path": "../../../../../restful-api-php"
+		},
+		{
+			"path": "../../../../../../../xampp/htdocs/laraveler"
+		}
+	],
+	"settings": {
+		"php.version": "8.3"
+	}
+}

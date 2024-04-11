@@ -11,11 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('copies', function (Blueprint $table) {
+        Schema::create('loans', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('book_id')->constrained('books');
-            // $table->foreignId('status')->constrained('copy_status');
-            $table->integer('quantity');
+            $table->foreignId('librarian_id')->constrained('librarians');
+            $table->foreignId('customer_id')->constrained('customers');
+            $table->foreignId('book_id')->constrained('copies');
+            $table->integer('copies_quantity');
+            $table->date('loan_date');
+            $table->date('return_date');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -26,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('copies');
+        Schema::dropIfExists('loans');
     }
 };

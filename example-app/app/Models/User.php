@@ -20,12 +20,15 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'role_id',
-        'username',
+        'username'
     ];
 
     
-    public function role (){
-        return $this->belongsTo(role::class);
+    public function librarian (){
+        return $this->belongsTo(Librarian::class);
+    }
+
+    public function customer (){
+        return $this->belongsTo(Customer::class);
     }
 }

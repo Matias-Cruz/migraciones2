@@ -1,18 +1,17 @@
 <?php
 
 namespace Database\Seeders;
-
-use App\Models\User;
+use App\Models\Author;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class UsersSeed extends Seeder
+class AuthorsSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        User::factory(10)->create();
+        Author::factory(10)->create();
     }
 }

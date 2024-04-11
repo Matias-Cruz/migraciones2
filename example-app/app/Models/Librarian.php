@@ -6,17 +6,17 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Role extends Model
+class Librarian extends Model
 {
     use HasFactory;
     use SoftDeletes;
-    
 
     protected $fillable = [
-        'name',
+        "user_id",
+        "cv_id"
     ];
 
-    public function users (){
-        return $this->belongsToMany(User::class);
+    public function user (){
+        return $this->hasOne(User::class);
     }
 }
