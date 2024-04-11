@@ -17,12 +17,56 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
-        $user = new User();
+        // updateOrCreate
+        // return User::updateOrCreate(
+        //     [
+        //         'username'=> $request->username,
+        //     ],
+        //     [
+        //         'body' => $request->body
+        //     ]
+        // );
 
-        $user-> username = $request-> username;
+        // firstOrCreate
+        return User::firstOrCreate(
+        [
+            'username' => $request->username
+        ]
+    );
 
-        $user->save();
-        // return redirect()->route('users');
+        // firstOrNew
+        // $user = User::firstOrNew(
+        //     [
+        //         'username'=> $request->username,
+        //     ],
+        //     [
+        //         'body'=> $request->body,
+        //     ],
+        //     // [
+        //     //     'username'=> $request->username,
+        //     // ],
+        
+        // );
+        
+        // $user->save();
+        
+        // where (es reeemplazado por firstOrCreate)
+        // $user = User::whereName('username',$request->username);
+        // if (!$user) return User::create($request->all());
+        // return response()->json($user);
+        // whereName
+        // return User::whereName($request->name)->firstOr(function () use ($request) {
+        //     return User::create([
+        //         'name'=>$request->name,
+        //     ]);
+        // });
+
+        // Simple
+        // $user = new User();
+
+        // $user-> username = $request-> username;
+
+        // $user->save();
     }
 
     public function update(Request $request, $id){
