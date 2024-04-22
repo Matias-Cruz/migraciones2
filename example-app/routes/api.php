@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AuthorController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -32,5 +33,8 @@ Route::put('users/{id}',[UserController::class,'update']);
 Route::delete('users/{id}',[UserController::class,'destroy']);
 
 // AUTHORS
-Route::get('authors',[UserController::class,'index']);
-Route::get('authors/{id}',[UserController::class,'show']);
+Route::get('authors',[AuthorController::class,'index']);
+Route::get('authors/{id}',[AuthorController::class,'show']);
+Route::post('authors/store',[AuthorController::class,'store']);
+Route::put('authors/{id}',[AuthorController::class,'update']);
+Route::delete('authors/{id}',[AuthorController::class,'destroy']);

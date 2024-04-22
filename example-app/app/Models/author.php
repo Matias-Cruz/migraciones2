@@ -14,6 +14,7 @@ class Author extends Model
     protected $fillable = [
         'name',
         'last_names',
+        'image',
     ];
     
     public function books (){

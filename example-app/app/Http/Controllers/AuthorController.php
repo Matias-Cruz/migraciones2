@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Author;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AuthorController extends Controller
 {
@@ -14,15 +15,14 @@ class AuthorController extends Controller
         return Author::find($id);
     }
 
-    // public function store(Request $request)
-    // {
-    //     return Author::updateOrCreate(
-    //         [
-    //             'username'=> $request->title,
-    //         ],
-    //         [
-    //             'body' => $request->body
-    //         ]
-    //     );
-    // }
+    public function store(Request $request)
+    {
+        // firstOrCreate
+        return Author::firstOrCreate(
+        [
+            'name' => $request->username,
+            'image' => Storage::files('image'),
+        ]
+        );
+    }
 }
