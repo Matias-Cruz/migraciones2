@@ -15,7 +15,8 @@ class GenresSeeder extends Seeder
     {
         $genres = [
             ['name' => 'Biografía'],
-            ['name' => 'Historia']
+            ['name' => 'Historia'],
+            ['name' => 'Cuento'],
         ];
 
         foreach ($genres as $genre) {

@@ -1,5 +1,6 @@
 {
     "require": {
-        "php": "*"
+        "php": "*",
+        "spatie/laravel-permission": "^6.7"
     }
 }

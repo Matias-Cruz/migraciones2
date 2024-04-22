@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\GenreController;
+use App\Http\Controllers\LoanController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -36,5 +39,18 @@ Route::delete('users/{id}',[UserController::class,'destroy']);
 Route::get('authors',[AuthorController::class,'index']);
 Route::get('authors/{id}',[AuthorController::class,'show']);
 Route::post('authors/store',[AuthorController::class,'store']);
+Route::post('authors/storeWImage',[AuthorController::class,'storeWImage']);
 Route::put('authors/{id}',[AuthorController::class,'update']);
 Route::delete('authors/{id}',[AuthorController::class,'destroy']);
+// Route::resource('authors/index',[AuthorController::class,'view']);
+
+// GENRES
+Route::get('genres',[GenreController::class,'index']);
+Route::delete('genres/{id}',[GenreController::class,'destroy']);
+Route::delete('genres/hardDelete',[AuthorController::class,'hardDelete']);
+
+// LOANS
+Route::get('loans',[LoanController::class,'index']);
+Route::get('loans/{id}',[LoanController::class,'show']);
+Route::get('loans/showByCustomerId/{customer_id}',[LoanController::class,'showByCustomerId']);
+
